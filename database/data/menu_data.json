@@ -1,0 +1,1751 @@
+{
+  "generated_from": {
+    "english_menu": "Uptown_Full_English_Menu.docx",
+    "prices": "Menu-prices.xlsx",
+    "arabic_menu": "Menu Up Town-ar.pdf",
+    "images": "item_images/"
+  },
+  "categories": [
+    {
+      "name_en": "Soups",
+      "name_ar": "الشوربة",
+      "sort_order": 1
+    },
+    {
+      "name_en": "Salads",
+      "name_ar": "السلطات",
+      "sort_order": 2
+    },
+    {
+      "name_en": "Appetizers",
+      "name_ar": "المقبلات",
+      "sort_order": 3
+    },
+    {
+      "name_en": "Pasta",
+      "name_ar": "المكرونة والريزوتو",
+      "sort_order": 4
+    },
+    {
+      "name_en": "Main Courses",
+      "name_ar": "الأطباق الرئيسية",
+      "sort_order": 5
+    },
+    {
+      "name_en": "Sandwiches",
+      "name_ar": "الساندويتشات",
+      "sort_order": 6
+    },
+    {
+      "name_en": "Oriental Dishes",
+      "name_ar": "المشويات والأطباق الشرقية",
+      "sort_order": 7
+    },
+    {
+      "name_en": "Desserts",
+      "name_ar": "الحلويات",
+      "sort_order": 8
+    }
+  ],
+  "items": [
+    {
+      "category_en": "Soups",
+      "name_en": "Lentil Soup",
+      "description_en": "Bouquet garni (leek, celery, onion and carrot), lentils, tomatoes, garlic, olive oil, cardamom, cumin and coriander.",
+      "name_ar": "العدس",
+      "description_ar": "بوكيه جارنيه(كرات+كرفس+بصل+جزر) عدس+طماطم +ثوم+ زيت زيتون+حبهان+كمون+كسبره",
+      "price": 75.0,
+      "image": "Lintel soup.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Lentil",
+      "price_match_score": 0.853,
+      "image_match_score": 1.0,
+      "sort_order": 1
+    },
+    {
+      "category_en": "Soups",
+      "name_en": "Cream of Mushroom Soup",
+      "description_en": "Bouquet garni (leek, celery and onion), fresh mushrooms, cream, chicken stock, garlic, olive oil, cardamom, bay leaf, nutmeg, rosemary, thyme and basil.",
+      "name_ar": "المشروم",
+      "description_ar": "بوكيه جارنيه(كرات+كرفس+بصل) مشروم فريش+ كريمة + تشكين ستوك +ثوم+ زيت زيتون + حبهان +ورق لوري جوزة الطيب +روزماري + زعتر + ريحان",
+      "price": 105.0,
+      "image": "Cream Mushroom Soup.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Cream Mushroom",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 2
+    },
+    {
+      "category_en": "Soups",
+      "name_en": "Creamy Chicken Soup",
+      "description_en": "Bouquet garni (leek, celery and onion), chicken stock, chicken, cream, garlic, cardamom, bay leaf and nutmeg.",
+      "name_ar": "تشكين كريمي",
+      "description_ar": "بوكيه جارنيه(كرات+كرفس+بصل) تشكين ستوك+فراخ +كريمة+ثوم+حبهان+ورق لوري+جوزة الطيب",
+      "price": 135.0,
+      "image": "Cream Chicken soup.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Cream Chicken",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 3
+    },
+    {
+      "category_en": "Soups",
+      "name_en": "Creamy Seafood Soup",
+      "description_en": "Bouquet garni (leek, celery, onion and carrot), shrimp, calamari, crab sticks, mussels, cream, fish stock, garlic and nutmeg.",
+      "name_ar": "سي فود كريمي",
+      "description_ar": "بوكيه جارنيه(كرات+كرفس+بصل+جزر) جمبري + كالمياري +كابوريا ستيك +بلح بحر +كريمة +سمك ستوك +ثوم + جوزة الطيب",
+      "price": 199.0,
+      "image": "Seafood Soup.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Cream Seafood",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 4
+    },
+    {
+      "category_en": "Soups",
+      "name_en": "Tom Yum Soup",
+      "description_en": "Tom yum paste, glass noodles and shrimp.",
+      "name_ar": "توم يام",
+      "description_ar": "عجينة توم يام+جالس نولدز+جمبري",
+      "price": 125.0,
+      "image": "Tom yum soup.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Tom yum",
+      "price_match_score": 0.868,
+      "image_match_score": 1.0,
+      "sort_order": 5
+    },
+    {
+      "category_en": "Soups",
+      "name_en": "Sweet Corn Truffle Soup",
+      "description_en": "Bouquet garni (leek, celery and onion), sweet corn, chopped mushrooms, truffle mushrooms, cream, cardamom and bay leaf.",
+      "name_ar": "سويت كورن ترافل",
+      "description_ar": "بوكيه جارنيه(كرات+كرفس+بصل) +ذرة+مشروم مفروم+مشروم ترافل+كريمة+حبهان+ورق لوري",
+      "price": 145.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Sweet corn truffle",
+      "price_match_score": 0.939,
+      "sort_order": 6
+    },
+    {
+      "category_en": "Salads",
+      "name_en": "Caesar Salad",
+      "description_en": "Iceberg lettuce, croutons, Parmesan cheese, Caesar dressing, and chicken or shrimp.",
+      "name_ar": "سيزر سالد",
+      "description_ar": "خس كابوتشا + عيش كريتون + جبنة بارميزان + دريسنج سيزر + تشكين او شريمب",
+      "price": 110.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Ceaser",
+      "price_match_score": 1.0,
+      "sort_order": 7
+    },
+    {
+      "category_en": "Salads",
+      "name_en": "Rocca Salad",
+      "description_en": "Rocket leaves, cherry tomatoes, pomegranate, apple, walnuts, pineapple or peach, mushrooms, Parmesan, and balsamic dressing or pomegranate molasses.",
+      "name_ar": "روكا سالد",
+      "description_ar": "جرجير + طماطم شيري + رمان + تفاح + عين جمل + اناناس او خوخ+ مشروم + بارميزان + دريسنج بلسمك او دبس رمان",
+      "price": 145.0,
+      "image": "Rocca salad.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Rocca",
+      "price_match_score": 0.812,
+      "image_match_score": 1.0,
+      "sort_order": 8
+    },
+    {
+      "category_en": "Salads",
+      "name_en": "Greek Salad",
+      "description_en": "Lettuce, cucumber, tomatoes, mixed bell peppers, olives, onion rings, feta cheese and olive oil.",
+      "name_ar": "جريك سالد",
+      "description_ar": "خس + خيار + طماطم + فلفل الوان + زيتون + بصل حلقات + جبنه فيتا + زيت زيتون",
+      "price": 145.0,
+      "image": "Greek salad.jpeg",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Greek",
+      "price_match_score": 0.812,
+      "image_match_score": 1.0,
+      "sort_order": 9
+    },
+    {
+      "category_en": "Salads",
+      "name_en": "Quinoa Salad",
+      "description_en": "Parsley, quinoa, tomatoes, lemon and olive oil.",
+      "name_ar": "كينوا سالد",
+      "description_ar": "بقدونس + كينوا + طماطم + ليمون + زيت زيتون",
+      "price": 179.0,
+      "image": "Quinoa Salad.jpeg",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Quinoa",
+      "price_match_score": 0.833,
+      "image_match_score": 1.0,
+      "sort_order": 10
+    },
+    {
+      "category_en": "Salads",
+      "name_en": "Smoked Salmon Salad",
+      "description_en": "Seafood salad, smoked salmon, shrimp and balsamic dressing.",
+      "name_ar": "سموكد سالمون",
+      "description_ar": "طبق سي فود سالد + سموكد سالمون + شريمب + بلسمك",
+      "price": 244.0,
+      "image": "Smoked salmon salad.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Smoked Salmon",
+      "price_match_score": 0.906,
+      "image_match_score": 1.0,
+      "sort_order": 11
+    },
+    {
+      "category_en": "Salads",
+      "name_en": "Green Salad",
+      "description_en": "Rocket leaves, cucumber, green pepper, tomatoes, onion rings and carrots.",
+      "name_ar": "جرين سالد",
+      "description_ar": "جرجير + خيار + فلفل اخضر+ طماطم + بصل حلقات + جزر",
+      "price": 95.0,
+      "image": "Green Salad.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Green",
+      "price_match_score": 0.812,
+      "image_match_score": 1.0,
+      "sort_order": 12
+    },
+    {
+      "category_en": "Salads",
+      "name_en": "Thai Salad",
+      "description_en": "Lettuce, sliced avocado, cherry tomatoes, mixed bell peppers, shrimp, sweet chili sauce and sesame seeds.",
+      "name_ar": "تاي سالد",
+      "description_ar": "خس + افوكادو سليز+ طماطم شيري + فلفل الوان + جمبري + سويت شيلي + سمسم",
+      "price": 185.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Thai",
+      "price_match_score": 0.786,
+      "sort_order": 13
+    },
+    {
+      "category_en": "Salads",
+      "name_en": "Beetroot Salad",
+      "description_en": "Beetroot, lemon, olive oil, parsley, onion, apple and sesame seeds.",
+      "name_ar": "بتروت سالد",
+      "description_ar": "بنجر + ليمون + زيت زيتون + بقدونس + بصل + تفاح + سمسم",
+      "price": 155.0,
+      "image": "Beetroot salad.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Beetroot",
+      "price_match_score": 0.864,
+      "image_match_score": 1.0,
+      "sort_order": 14
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Risotto Arancini",
+      "description_en": "Risotto rice, Parmesan cheese, cream, garlic, parsley, red sauce, basil and onion.",
+      "name_ar": "روزيتو ارنشيني",
+      "description_ar": "رز روزيتو + جبنه بارميزان + كريمة + ثوم + بقدونس + ريد صوص + ريحان + بصل",
+      "price": 200.0,
+      "image": "Arancini.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Risotto Arancini",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 15
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Nachos",
+      "description_en": "Tortilla bread, sausage meat, cheddar sauce and parsley.",
+      "name_ar": "ناتشوز",
+      "description_ar": "عيش تورتيال + لحمة سجق + صوص شيدر + بقدونس",
+      "price": 189.0,
+      "image": "Nachos.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Nachos",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 16
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Dynamite Shrimp",
+      "description_en": "Shrimp, kunafa pastry, soy sauce, ginger, coriander, black pepper and dynamite sauce (mayonnaise, hot sauce and lemon).",
+      "name_ar": "ديناميت شريمب",
+      "description_ar": "جمبري + كنافة + صويا صوص + جنزبيل + كسبرة + فلفل اسود + ديناميت (مايونيز + هوت صوص +ليمون)",
+      "price": 210.0,
+      "image": "Dynamite Shrimp.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Dynamite Shrimp",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 17
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Fried Calamari",
+      "description_en": "Calamari rings, garlic, lemon juice, dill and tartar sauce.",
+      "name_ar": "كالمياري فرايد",
+      "description_ar": "كاليماري حلقات + ثوم + عصير لمون + شبت + صوص تارتار",
+      "price": 197.0,
+      "image": "Fried Calamari.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Fried Calamari",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 18
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Chicken Strips",
+      "description_en": "Chicken, mustard, garlic, salt and pepper, and sweet chili sauce.",
+      "name_ar": "تشكين استربس",
+      "description_ar": "تشكين + مستردة + ثوم + ملح وفلفل + صوص سويت شيلي",
+      "price": 175.0,
+      "image": "Chicken Strips.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Chicken Strips",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 19
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Fried Mozzarella",
+      "description_en": "Fried mozzarella cheese and honey mustard sauce.",
+      "name_ar": "موتزريال فرايد",
+      "description_ar": "جبنة موتزريال فرايد + صوص هاني مسترد",
+      "price": 210.0,
+      "image": "Fried Mozzarella.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Mozzrilla Fried",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 20
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Truffle Potatoes",
+      "description_en": "Potatoes, cream, butter, nutmeg, truffle mushrooms and truffle oil.",
+      "name_ar": "ترافل بوتيتوس",
+      "description_ar": "بطاطس + كريمة + زبدة + جوزة الطيب + مشروم ترافل + زيت ترافل",
+      "price": 245.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Truffle Potatoes",
+      "price_match_score": 1.0,
+      "sort_order": 21
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Fries Basket",
+      "description_en": "French fries, beef bacon and cheddar cheese.",
+      "name_ar": "فرايز باسكت",
+      "description_ar": "فرايز + بيف بيكون + شيدر",
+      "price": 149.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Fries Basket",
+      "price_match_score": 1.0,
+      "sort_order": 22
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Chicken Wings",
+      "description_en": "Chicken wings and sriracha sauce.",
+      "name_ar": "تشكين وينجز",
+      "description_ar": "اجنحة دجاج + صوص سيراتشا",
+      "price": 159.0,
+      "image": "Chicken wings.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Chicken Wings",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 23
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Mussels",
+      "description_en": "Mussels, shrimp, calamari, mushrooms, onion, mixed bell peppers and Parmesan.",
+      "name_ar": "ماسلز",
+      "description_ar": "بلح بحر + جمبري+ كاليماري + مشروم + بصل + فلفل الوان + بارميزان",
+      "price": 249.0,
+      "image": "Mussels.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Mussels",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 24
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Spring Rolls",
+      "description_en": "Spring roll wrappers, sweet corn, red kidney beans, mixed bell peppers, onion, chicken, cheese and sweet chili sauce.",
+      "name_ar": "سبرنج رول",
+      "description_ar": "ورق سبرنج + ذرة + فاصولياء حمراء + فلفل الوان + بصل + فراخ + جبنة + سويت شيلي",
+      "price": 145.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Spring Rolls",
+      "price_match_score": 1.0,
+      "sort_order": 25
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Tahini",
+      "description_en": "Tahini, water, cumin, lemon salt, chili, garlic and yogurt.",
+      "name_ar": "طحينة",
+      "description_ar": "(طحينة + مياه + كمون + ملح لمون + شطة + ثوم + زبادي)",
+      "price": 40.0,
+      "image": "Tahini.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Tahini",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 26
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Mutabbal",
+      "description_en": "Grilled eggplant, mixed bell peppers, tomatoes, lemon and 50 g tahini.",
+      "name_ar": "متبل",
+      "description_ar": "باذنجان مشوي + فلفل الوان + طماطم + لمون + 50 جرام طحينة",
+      "price": 50.0,
+      "image": "Mutabbal.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Mutabbal",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 27
+    },
+    {
+      "category_en": "Appetizers",
+      "name_en": "Hummus",
+      "description_en": "Chickpeas, yogurt, cumin, chili and tahini.",
+      "name_ar": "حمص",
+      "description_ar": "حمص + زبادي + كمون + شطة + طحينة",
+      "price": 70.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Hummus",
+      "price_match_score": 1.0,
+      "sort_order": 28
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Mushroom Risotto",
+      "description_en": "Risotto rice, mushrooms, butter, cream, truffle oil, celery, Parmesan, basil, and chicken or shrimp.",
+      "name_ar": "روزيتو مشروم",
+      "description_ar": "رز روزيتو + مشروم + زبدة + كريمة + زيت ترافل + كرفس + بارميزان + ريحان + (تشكين او شريمب)",
+      "price": 320.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Mushroom Risotto",
+      "price_match_score": 1.0,
+      "sort_order": 29
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Classic Fettuccine Alfredo",
+      "description_en": "Fettuccine pasta, white sauce, mushrooms, Parmesan, and chicken or shrimp.",
+      "name_ar": "الفريدو كالسيك",
+      "description_ar": "باستا فوتتشيني + وايت صوص + مشروم + بارميزان + (تشكين او شريمب)",
+      "price": 270.0,
+      "image": "Alfredo Shrimp.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Fettuccine Alfredo",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 30
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Seafood Linguine",
+      "description_en": "Fettuccine pasta, pink sauce, shrimp, calamari, mussels, garlic, onion and Parmesan.",
+      "name_ar": "لينجويني سي فود",
+      "description_ar": "باستا فوتتشيني + بينك صوص + جمبري + كاليماري + بلح بحر + ثوم + بصل+ بارميزان",
+      "price": 395.0,
+      "image": "Linguini Seafood.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Seafood Linguine",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 31
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Pasta Arrabbiata",
+      "description_en": "Penne pasta, red sauce, olives, hot pepper, garlic, onion and Parmesan.",
+      "name_ar": "باستا اربياتا",
+      "description_ar": "باستا بنا + ريد صوص + زيتون + فلفل حار + ثوم + بصل +بارميزان",
+      "price": 185.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Pasta Arrabbiata",
+      "price_match_score": 1.0,
+      "sort_order": 32
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Up Town Pasta",
+      "description_en": "Rigatoni pasta, beef, smoked turkey, mixed bell peppers, mushrooms, Parmesan, butter, garlic and onion.",
+      "name_ar": "اب تاون باستا",
+      "description_ar": "باستا ريجاتوني + لحم + سموك تركي + فلفل الوان + مشروم + بارميزان + زبدة + ثوم + بصل",
+      "price": null,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu"
+      ],
+      "flags": [
+        "missing_image",
+        "missing_price"
+      ],
+      "sort_order": 33
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Spaghetti Mussels",
+      "description_en": "Spaghetti pasta, mussels, celery, butter, dill, Parmesan, lemon juice, onion and garlic.",
+      "name_ar": "اسباجتي ماسلز",
+      "description_ar": "باستا اسباجتي + بلح بحر + كرفس + زبدة + شبت + بارميزان + عصير لمون + بصل +ثوم",
+      "price": 309.0,
+      "image": "Spaghetti Mussels.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Spaghetti Mussles",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 34
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Spaghetti Meatballs",
+      "description_en": "Spaghetti pasta, pesto sauce, meatballs in red sauce and Parmesan.",
+      "name_ar": "اسباجتي بولز",
+      "description_ar": "باستا اسباجتي + بستو صوص + ميت بولز بالريد صوص + بارميزان",
+      "price": 375.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Spaghetti Meatballs",
+      "price_match_score": 1.0,
+      "sort_order": 35
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Pasta Provençal",
+      "description_en": "Penne pasta, basil, grilled vegetables, ricotta cheese and Parmesan.",
+      "name_ar": "باستا بروفنسال",
+      "description_ar": "باستا بنا + ريحان + خضار مشوي + جبنة ريكوتا + بارميزان",
+      "price": 280.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Pasta Provencal",
+      "price_match_score": 1.0,
+      "sort_order": 36
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Penne White",
+      "description_en": "Penne pasta, white sauce and Parmesan.",
+      "name_ar": "بنا وايت",
+      "description_ar": "باستا بنا + وايت صوص + بارميزان",
+      "price": null,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu"
+      ],
+      "flags": [
+        "missing_image",
+        "missing_price"
+      ],
+      "sort_order": 37
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Penne Red",
+      "description_en": "Penne pasta, red sauce and Parmesan.",
+      "name_ar": "بنا ريد",
+      "description_ar": "باستا بنا + ريد صوص + بارميزان",
+      "price": null,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu"
+      ],
+      "flags": [
+        "missing_image",
+        "missing_price"
+      ],
+      "sort_order": 38
+    },
+    {
+      "category_en": "Pasta",
+      "name_en": "Mac & Cheese",
+      "description_en": "Elbow macaroni, cheddar sauce, cocktail sauce and fried chicken.",
+      "name_ar": "ماك اند تشيز",
+      "description_ar": "مكرونة البو + صوص شيدر +صوص كوكتيل +فرايد تشكين",
+      "price": 320.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Mac&Cheese",
+      "price_match_score": 1.0,
+      "sort_order": 39
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Beef Tenderloin Fillet",
+      "description_en": "Beef tenderloin and butter. Served with mashed potatoes and sautéed vegetables, with a choice of blue cheese, mushroom or pepper sauce.",
+      "name_ar": "بيف فيليه",
+      "description_ar": "بيف تندرلوين + زبدة + سايد ماش و سوتيه صوص بلو تشيز او مشروم او بيبر",
+      "price": 468.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Beef Fillet",
+      "price_match_score": 1.0,
+      "sort_order": 40
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Country Chicken",
+      "description_en": "Crispy chicken piece, mozzarella, beef bacon and red sauce. Served with penne pasta.",
+      "name_ar": "تشكين كانتري",
+      "description_ar": "قطعة فراخ كرسبي + موتزريال + بيف بيكون + ريد صوص سايد باستا بنا",
+      "price": 445.0,
+      "image": "Country Chicken.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Country Chicken",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 41
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Oven-Baked Salmon",
+      "description_en": "Salmon fillet, olive oil and butter. Served with basil mashed potatoes and grilled vegetables, with lemon or teriyaki sauce.",
+      "name_ar": "اوفن بيكد سالمون",
+      "description_ar": "قطعة سالمون + زيت زيتون + زبدة سايد ماش بالريحان وخضار جريلد صوص ليمون او ترياكي",
+      "price": 595.0,
+      "image": "oven baked salmon.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Oven Baked Salamon",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 42
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Up Town Chicken",
+      "description_en": "Chicken breast stuffed with cheese, mushrooms, onion, spinach and cream. Served with oven-roasted potatoes.",
+      "name_ar": "اب تاون تشكين",
+      "description_ar": "صدر فراح محشي( جبنة + مشروم +بصل + سبانخ + كريمة) سايد بطاطس فرن مشوية",
+      "price": null,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu"
+      ],
+      "flags": [
+        "missing_image",
+        "missing_price"
+      ],
+      "sort_order": 43
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Kalfrouzi Indian Chicken",
+      "description_en": "Chicken breasts, mixed bell peppers, hot pepper, coconut milk, cream, turmeric and coriander. Served with white rice.",
+      "name_ar": "كالفروزي انديان تشكين",
+      "description_ar": "صدور دجاج + فلفل الوان + فلفل حار + لبن جوز هند + كريمة + كركم + كسبرة سايد رز ابيض",
+      "price": 430.0,
+      "image": "Kalfrouize Indian Chicken.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Kalfrouzi Chicken",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 44
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Tiger Shrimp",
+      "description_en": "Grilled jumbo shrimp. Served with green dill rice and sautéed vegetables.",
+      "name_ar": "تايجر شريمب",
+      "description_ar": "جمبري جامبو مشوي سايد رز اخضر بالشبت و سوتيه",
+      "price": 580.0,
+      "image": "Tiger Shrimp.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Tiger Shrimp",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 45
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Lamb Shank Fattah",
+      "description_en": "Lamb shank, white rice, toasted bread and red sauce.",
+      "name_ar": "فتة موزة",
+      "description_ar": "موزة ضاني + رز ابيض + عيش محمص + ريد صوص",
+      "price": 525.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Lamp Shank",
+      "price_match_score": 1.0,
+      "sort_order": 46
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Mushroom Piccata",
+      "description_en": "Beef fillet, demi-glace, celery, mushrooms and cream.",
+      "name_ar": "بيكاتا مشروم",
+      "description_ar": "لحم فيليه + ديمجالس + كرفس + مشروم + كريمة",
+      "price": null,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image",
+        "missing_price"
+      ],
+      "price_source_name": "Mushroom Piccata",
+      "price_match_score": 1.0,
+      "sort_order": 47
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Grilled Chicken",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 300.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 48
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Cordon Bleu",
+      "source_name_en": "Cordon Blue",
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 430.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 49
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Mix Seafood",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 590.0,
+      "image": "Mix Seafood.jfif",
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "not_in_english_menu"
+      ],
+      "image_match_score": 1.0,
+      "sort_order": 50
+    },
+    {
+      "category_en": "Main Courses",
+      "name_en": "Chicken Mushhab",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 395.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 51
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Tuna Sandwich",
+      "description_en": "Mayonnaise, lettuce, tuna, onion, mixed bell peppers and lemon juice. Served with fries and pickles.",
+      "name_ar": "تونة",
+      "description_ar": "مايونيز + خس + تونة + بصل + فلفل الوان + عصير لمون سايد بطاطس ومخلل",
+      "price": 175.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Tuna",
+      "price_match_score": 0.735,
+      "sort_order": 52
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Beef Steak Sandwich",
+      "description_en": "Lettuce, tomatoes, steak, caramelized onion and cheese. Served with fries and pickles.",
+      "name_ar": "بيف ستيك",
+      "description_ar": "خس + طماطم + لحم ستيك + بصل مكرمل + جبنة سايد بطاطس ومخلل",
+      "price": 259.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Beef Steak",
+      "price_match_score": 0.845,
+      "sort_order": 53
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Classic Burger",
+      "description_en": "Mayonnaise, lettuce, tomatoes, burger patty, onion and pickled cucumber, with optional egg or cheese. Served with fries and pickles.",
+      "name_ar": "كالسيك برجر",
+      "description_ar": "مايونيز + خس + طماطم + برجر + بصل + خيار مخلل (إضافة بيض او جبنة) سايد بطاطس ومخلل",
+      "price": null,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image",
+        "missing_price"
+      ],
+      "price_source_name": "Classic Burger",
+      "price_match_score": 1.0,
+      "sort_order": 54
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Fried Shrimp Sandwich",
+      "description_en": "Lettuce, tomatoes, fried shrimp, cucumber and tartar sauce. Served with fries and pickles.",
+      "name_ar": "فرايد شريمب",
+      "description_ar": "خس + طماطم + جمبري فرايد + خيار +صوص تارتار سايد بطاطس ومخلل",
+      "price": 179.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Fried Shrimp",
+      "price_match_score": 0.864,
+      "sort_order": 55
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Up Town Burger",
+      "description_en": "Mayonnaise, ketchup, lettuce, tomatoes, burger patty, fried chicken, onion, cheese, beef bacon and pickled cucumber. Served with fries and pickles.",
+      "name_ar": "اب تاون برجر",
+      "description_ar": "مايونيز + كاتشب + خس + طماطم + قطعة برجر + فرايد تشكين + بصل +جبنة + بيف بيكون + خيار مخلل سايد بطاطس ومخلل",
+      "price": null,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image",
+        "missing_price"
+      ],
+      "price_source_name": "Up Town Burger",
+      "price_match_score": 1.0,
+      "sort_order": 56
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Chicken Parmesan Sandwich",
+      "description_en": "Mayonnaise, ketchup, lettuce, tomatoes, grilled chicken and Parmesan. Served with fries and pickles.",
+      "name_ar": "تشكين بارميزان",
+      "description_ar": "مايونيز + كاتشب + خس + طماطم +فراخ جريلد + بارميزان سايد بطاطس ومخلل",
+      "price": 200.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Chicken Parmesan",
+      "price_match_score": 0.89,
+      "sort_order": 57
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Crispy Chicken Sandwich",
+      "description_en": "Mayonnaise, ketchup, lettuce, tomatoes, chicken strips and cheese. Served with fries and pickles.",
+      "name_ar": "تشكين كرسبي",
+      "description_ar": "مايونيز + كاتشب + خس + طماطم + استربس + جبنة سايد بطاطس ومخلل",
+      "price": 179.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Crispy Chicken",
+      "price_match_score": 0.878,
+      "sort_order": 58
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Smoked Salmon Sandwich",
+      "description_en": "Rocket leaves, tomatoes, salmon, pickled cucumber and tartar sauce. Served with fries and pickles.",
+      "name_ar": "سالمون سموكد",
+      "description_ar": "جرجير+ طماطم + سالمون + خيار مخلل +صوص تارتار سايد بطاطس ومخلل",
+      "price": 254.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Smoked Salmon",
+      "price_match_score": 0.871,
+      "sort_order": 59
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Hot Dog",
+      "description_en": "Mayonnaise, ketchup, lettuce, hot dog, onion, mixed bell peppers and cheese. Served with fries and pickles.",
+      "name_ar": "هوت دوج",
+      "description_ar": "مايونيز + كاتشب + خس + هوت دوج + بصل +فلفل الوان + جبنة سايد بطاطس ومخلل",
+      "price": 139.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Hot Dog",
+      "price_match_score": 1.0,
+      "sort_order": 60
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Halloumi Sandwich",
+      "description_en": "Rocket leaves, halloumi, grilled vegetables and balsamic sauce. Served with fries and pickles.",
+      "name_ar": "حالومي",
+      "description_ar": "جرجير + حالومي + خضار جريلد + صوص بلسمك سايد بطاطس ومخلل",
+      "price": null,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image",
+        "missing_price"
+      ],
+      "price_source_name": "Halloumi",
+      "price_match_score": 0.82,
+      "sort_order": 61
+    },
+    {
+      "category_en": "Sandwiches",
+      "name_en": "Club Sandwich",
+      "source_name_en": "Clup Sandwiche",
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 180.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 62
+    },
+    {
+      "category_en": "Oriental Dishes",
+      "name_en": "Kofta Skewers",
+      "description_en": "Kofta skewers, mixed rice, fries, tahini, salad and bread.",
+      "name_ar": "كفتة سيخ",
+      "description_ar": "كفتة + رز بالخلطة + فرايز + طحينة + سلطة + عيش +",
+      "price": 245.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Kofta",
+      "price_match_score": 1.0,
+      "sort_order": 63
+    },
+    {
+      "category_en": "Oriental Dishes",
+      "name_en": "Shish Tawook",
+      "description_en": "Grilled chicken with vegetables (onion, pepper and tomatoes), white rice, fries, tahini, salad and bread.",
+      "name_ar": "شيش طاووق",
+      "description_ar": "دجاج مشوي + الخضار (بصل + فلفل + طماطم) + رز ابيض + فرايز + طحينة +",
+      "price": 280.0,
+      "image": "Shish Tawook.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Shish Tawook",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 64
+    },
+    {
+      "category_en": "Oriental Dishes",
+      "name_en": "Mixed Grill",
+      "description_en": "Kofta, shish tawook, kebab, mixed rice, fries, tahini, salad and bread.",
+      "name_ar": "ميكس جريل",
+      "description_ar": "كفتة + شيش + كباب + رز بالخلطة + فرايز + طحينة + سلطة + عيش",
+      "price": 465.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Mixed Grill",
+      "price_match_score": 1.0,
+      "sort_order": 65
+    },
+    {
+      "category_en": "Oriental Dishes",
+      "name_en": "Up Town Mixed Grill",
+      "description_en": "Kofta, shish tawook, kebab, 2 sausages, half a hawawshi loaf, mixed rice, fries, tahini, salad and bread.",
+      "name_ar": "اب تاون ميكس",
+      "description_ar": "كفتة + شيش + كباب + 2 سجق + نص رغيف حواوشي + رز بالخلطة + فرايز +",
+      "price": 595.0,
+      "image": "Up Town mix grill.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Up Town Mixed Grill",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 66
+    },
+    {
+      "category_en": "Oriental Dishes",
+      "name_en": "Lamb Kebab",
+      "description_en": "Lamb kebab, mixed rice, fries or sautéed vegetables, tahini, salad and bread.",
+      "name_ar": "كباب",
+      "description_ar": "لحم كباب ضاني + رز بالخلطة + فرايز/سوتيه + طحينة + سلطة + عيش",
+      "price": 385.0,
+      "image": "Kebab.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Kebab",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 67
+    },
+    {
+      "category_en": "Oriental Dishes",
+      "name_en": "Boneless Half Chicken",
+      "description_en": "Half a boneless chicken, white rice, fries, tahini, salad and bread.",
+      "name_ar": "فراخ مسحب",
+      "description_ar": "نص فرخة مخلي + رز ابيض + فرايز + طحينة + سلطة + عيش",
+      "price": 285.0,
+      "image": "Boneless Chicken.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Boneless Half Chicken",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 68
+    },
+    {
+      "category_en": "Oriental Dishes",
+      "name_en": "Grilled Lamb Chops",
+      "description_en": "Lamb chops, grilled potatoes, sautéed vegetables, tahini, salad and bread.",
+      "name_ar": "ريش مشوية",
+      "description_ar": "ريش + بطاطس مشوية + سوتيه + طحينة + سلطة + عيش",
+      "price": 550.0,
+      "image": "Lamp Chops.jfif",
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [],
+      "price_source_name": "Grilled Lamb Chops",
+      "price_match_score": 1.0,
+      "image_match_score": 1.0,
+      "sort_order": 69
+    },
+    {
+      "category_en": "Oriental Dishes",
+      "name_en": "Hawawshi",
+      "description_en": "Hawawshi, fries, pickles and tahini.",
+      "name_ar": "حواوشي",
+      "description_ar": "حواوشي + فرايز + مخلل + طحينة",
+      "price": 160.0,
+      "image": null,
+      "sources": [
+        "arabic_menu",
+        "english_menu",
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_image"
+      ],
+      "price_source_name": "Hawawshi",
+      "price_match_score": 1.0,
+      "sort_order": 70
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Kunafa Nutella",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 195.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 71
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Blueberry Cheesecake",
+      "source_name_en": "Cheese Cake Blue Berry",
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 280.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 72
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Cheesecake",
+      "source_name_en": "Cheese Cake",
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 195.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 73
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Black Forest",
+      "source_name_en": "Black Forist",
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 200.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 74
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Ice Cake",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 235.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 75
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Waffle",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 279.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 76
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Lebanese Sanit",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 215.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 77
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Crepe",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 279.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 78
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Mini Pancakes",
+      "source_name_en": "PanCake Mini",
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 230.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 79
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Fruit Platter (Small)",
+      "source_name_en": "Fruit Platter s",
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 120.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 80
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Fruit Platter (Large)",
+      "source_name_en": "Fruit Platter L",
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 190.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 81
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Crepe Nutella",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 250.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 82
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Ice Cream",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 40.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 83
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "San Sebastian",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 265.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 84
+    },
+    {
+      "category_en": "Desserts",
+      "name_en": "Tres Leches",
+      "source_name_en": null,
+      "description_en": null,
+      "name_ar": null,
+      "description_ar": null,
+      "price": 210.0,
+      "image": null,
+      "sources": [
+        "prices_sheet"
+      ],
+      "flags": [
+        "missing_arabic",
+        "missing_description",
+        "missing_image",
+        "not_in_english_menu"
+      ],
+      "sort_order": 85
+    }
+  ],
+  "unmatched_images": [],
+  "renamed": [
+    {
+      "from": "Clup Sandwiche",
+      "to": "Club Sandwich"
+    },
+    {
+      "from": "Cordon Blue",
+      "to": "Cordon Bleu"
+    },
+    {
+      "from": "Cheese Cake Blue Berry",
+      "to": "Blueberry Cheesecake"
+    },
+    {
+      "from": "Cheese Cake",
+      "to": "Cheesecake"
+    },
+    {
+      "from": "Black Forist",
+      "to": "Black Forest"
+    },
+    {
+      "from": "PanCake Mini",
+      "to": "Mini Pancakes"
+    },
+    {
+      "from": "Fruit Platter s",
+      "to": "Fruit Platter (Small)"
+    },
+    {
+      "from": "Fruit Platter L",
+      "to": "Fruit Platter (Large)"
+    }
+  ],
+  "notes": []
+}

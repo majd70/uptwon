@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /menu
+Disallow: /admin
+Disallow: /storage/branding/
