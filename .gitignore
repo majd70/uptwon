@@ -21,10 +21,9 @@ yarn-error.log
 /.vscode
 /.zed
 
-# Compiled CSS/JS is committed on purpose: shared hosting has no Node, so the
-# server must never need to run `npm run build`. Rebuild and commit after any
-# change under resources/.
-!/public/build
+# NOTE: /public/build is deliberately NOT ignored. Shared hosting has no Node,
+# so the compiled CSS/JS must ship with the repository. Run `npm run build` and
+# commit the result after any change under resources/.
 
 # Design and verification output, regenerated on demand
 /storage/app/screenshots*
