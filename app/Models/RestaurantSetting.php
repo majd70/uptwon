@@ -65,6 +65,17 @@ class RestaurantSetting extends Model
     }
 
     /**
+     * The address this site is served from: the dashboard value when set,
+     * otherwise APP_URL. Always without a trailing slash.
+     */
+    public function publicUrl(): string
+    {
+        $url = filled($this->site_url) ? $this->site_url : (string) config('app.url');
+
+        return rtrim(trim($url), '/');
+    }
+
+    /**
      * The letters drawn inside the gold ring when there is no logo image.
      * Falls back to the initials of the English name.
      */

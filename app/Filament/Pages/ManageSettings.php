@@ -109,6 +109,29 @@ class ManageSettings extends Page implements HasForms
                             ]),
                         ]),
 
+                    Forms\Components\Tabs\Tab::make('Website')
+                        ->icon('heroicon-o-globe-alt')
+                        ->schema([
+                            Forms\Components\TextInput::make('site_url')
+                                ->label('Website address')
+                                ->url()
+                                ->placeholder('https://your-domain.com')
+                                ->prefixIcon('heroicon-o-link')
+                                ->helperText('The address guests actually open. The QR code and every menu photo are built from it. Leave empty to use APP_URL from the .env file.')
+                                ->columnSpanFull()
+                                ->live(onBlur: true),
+
+                            Forms\Components\Placeholder::make('site_url_preview')
+                                ->label('Your QR code will point at')
+                                ->content(fn () => new \Illuminate\Support\HtmlString(
+                                    '<code>'.e(\App\Services\QrCodeBuilder::url()).'</code>'
+                                )),
+
+                            Forms\Components\Placeholder::make('site_url_note')
+                                ->label('')
+                                ->content('Set this the moment you move to a real domain, then reprint the QR code — a printed code has its address baked in and cannot be updated.'),
+                        ]),
+
                     Forms\Components\Tabs\Tab::make('Contact')
                         ->icon('heroicon-o-phone')
                         ->schema([

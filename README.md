@@ -56,7 +56,8 @@ php artisan key:generate
 
 Create the database, then set `DB_*` and **`APP_URL`** in `.env`. `APP_URL` must match
 the address you actually open — image URLs and the QR code target are both built from
-it.
+it. Once the site is live you can override it from the dashboard instead: see
+**Website address** below.
 
 ```sql
 CREATE DATABASE uptown_menu CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -109,6 +110,9 @@ the web root.
    APP_URL=https://yourdomain.com
    ```
 
+   `APP_URL` can also be left as-is and set from **Admin → Settings → Website**
+   instead — that value wins over `.env` and survives `config:cache`.
+
    Generate a key with `php artisan key:generate --show` and paste it into `APP_KEY`.
    Create the MySQL database in cPanel and fill in `DB_*`.
 
@@ -147,7 +151,7 @@ the web root.
 ### Post-deploy checklist
 
 - [ ] `/` and `/menu` load, **with dish photos showing**
-- [ ] `APP_URL` matches the live domain
+- [ ] **Settings → Website** set to the live domain (or `APP_URL` matches it)
 - [ ] `APP_DEBUG=false`, `APP_ENV=production`
 - [ ] Admin password changed from the seeded default
 - [ ] Real Instagram / Facebook / TikTok URLs set (the repo ships placeholders)
@@ -203,6 +207,16 @@ the UI, but `QrCodeBuilder::url($table)`, the `?table=N` parameter and the
 `qr_scans.table_number` column all still work — the feature can return without a
 migration.
 
+**Website address.** `Settings → Website` holds the address guests actually open.
+When set it overrides `APP_URL` at runtime for the whole app — the QR code target,
+every menu photo URL, and generated links — so moving to a real domain needs no file
+editing and no `config:clear`. Left empty, everything falls back to `APP_URL`. A
+trailing slash is trimmed automatically, and the tab shows exactly what the QR code
+will encode.
+
+Note that a **printed** QR code cannot be updated: the address is baked into the
+image. Set the domain first, then print.
+
 **Rate limiting.** Public routes are capped at 90 requests/minute per IP.
 
 **Uploads.** Validated (JPEG/PNG/WebP, ≤ 3 MB), resized to 1200px and converted to
@@ -246,12 +260,13 @@ the full description.
 php artisan test
 ```
 
-36 feature tests: landing and menu load, menu lists imported items, null prices render
+38 feature tests: landing and menu load, menu lists imported items, null prices render
 `—`, hidden and empty categories stay hidden, locale switching flips `lang`/`dir`, the
 locale cookie persists, name fallback between languages, monogram falls back from logo
 to letters to initials, QR scan logging, admin routes require auth and load once
 authenticated, QR PNG is a decodable image and SVG is valid XML, and `menu:import` is
-idempotent across repeated runs.
+idempotent across repeated runs, and the dashboard's Website address overrides
+`APP_URL` while falling back to it when empty.
 
 Tests run against in-memory SQLite and never touch the real database.
 

@@ -31,7 +31,8 @@ class QrCodeBuilder
             $query['table'] = $table;
         }
 
-        return rtrim(config('app.url'), '/').'/?'.http_build_query($query);
+        // Follows the dashboard's Website address, falling back to APP_URL.
+        return settings()->publicUrl().'/?'.http_build_query($query);
     }
 
     public function svg(?string $table = null, int $size = 1024, bool $withLogo = false): string

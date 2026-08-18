@@ -1,0 +1,18 @@
+import { chromium } from 'playwright';
+import { mkdirSync } from 'node:fs';
+const BASE = process.env.BASE_URL ?? 'http://127.0.0.1:8567';
+mkdirSync('storage/app/design', { recursive: true });
+const b = await chromium.launch();
+const c = await b.newContext({ viewport: { width: 1280, height: 900 } });
+const p = await c.newPage();
+await p.goto(`${BASE}/admin/login`, { waitUntil: 'networkidle' });
+await p.fill('input[type="email"]', 'admin@uptown.test');
+await p.fill('input[type="password"]', 'password');
+await Promise.all([p.waitForURL(u => !u.pathname.endsWith('/login')), p.click('button[type="submit"]')]);
+await p.goto(`${BASE}/admin/manage-settings`, { waitUntil: 'networkidle' });
+await p.waitForTimeout(1200);
+await p.click('button:has-text("Website")');
+await p.waitForTimeout(800);
+await p.screenshot({ path: 'storage/app/design/settings-website.png' });
+console.log('captured');
+await b.close();

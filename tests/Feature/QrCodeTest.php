@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\RestaurantSetting;
 use App\Services\QrCodeBuilder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -15,6 +16,29 @@ class QrCodeTest extends TestCase
         parent::setUp();
 
         $this->seed(\Database\Seeders\RestaurantSettingSeeder::class);
+    }
+
+    public function test_the_dashboard_website_address_overrides_app_url(): void
+    {
+        config(['app.url' => 'http://127.0.0.1:8000']);
+
+        RestaurantSetting::current()->update(['site_url' => 'https://uptown-restaurant.com/']);
+        RestaurantSetting::flushCache();
+
+        // Trailing slash trimmed, and the QR follows the dashboard, not .env.
+        $this->assertSame('https://uptown-restaurant.com', RestaurantSetting::current()->publicUrl());
+        $this->assertStringStartsWith('https://uptown-restaurant.com/?', QrCodeBuilder::url());
+    }
+
+    public function test_it_falls_back_to_app_url_when_no_website_address_is_set(): void
+    {
+        config(['app.url' => 'http://127.0.0.1:8000']);
+
+        RestaurantSetting::current()->update(['site_url' => null]);
+        RestaurantSetting::flushCache();
+
+        $this->assertSame('http://127.0.0.1:8000', RestaurantSetting::current()->publicUrl());
+        $this->assertStringStartsWith('http://127.0.0.1:8000/?', QrCodeBuilder::url());
     }
 
     public function test_target_url_carries_the_tracking_parameters(): void
