@@ -43,15 +43,6 @@
                     {{ $this->targetUrl }}
                 </div>
 
-                @unless (str_starts_with($this->targetUrl, 'https://'))
-                    <p style="width:100%; max-width:340px; padding:0.75rem; border-radius:0.5rem;
-                              border:1px solid rgba(217,119,6,0.45); background:rgba(217,119,6,0.1);
-                              font-size:0.75rem; line-height:1.6; text-align:center;">
-                        This code points at the address above, which guests cannot reach. Set your
-                        domain under <strong>Settings → Website</strong> <strong>before printing</strong>.
-                    </p>
-                @endunless
-
                 <p style="font-size:0.75rem; opacity:0.65; text-align:center;">
                     Every scan is counted on the dashboard.
                 </p>

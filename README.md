@@ -144,9 +144,9 @@ the web root.
 7. **Permissions** — `storage/` and `bootstrap/cache/` must be writable (755, or 775
    if PHP runs as a different user).
 
-8. **Print the QR code** from **Admin → QR code** *after* `APP_URL` points at the
-   live domain — the code encodes that URL. The page warns you while it still points
-   at a non-HTTPS address.
+8. **Print the QR code** from **Admin → QR code** *after* the domain is set — the
+   code encodes that address. The page shows the exact URL under the preview; check
+   it before printing.
 
 ### Post-deploy checklist
 
