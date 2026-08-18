@@ -35,7 +35,7 @@ class MenuOverview extends BaseWidget
                 ->color('success'),
 
             Stat::make('Scans, last 30 days', number_format($month))
-                ->description('Includes every table code')
+                ->description('Menu opened from the QR code')
                 ->descriptionIcon('heroicon-m-calendar-days')
                 ->color('primary'),
 

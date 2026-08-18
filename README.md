@@ -140,8 +140,9 @@ the web root.
 7. **Permissions** — `storage/` and `bootstrap/cache/` must be writable (755, or 775
    if PHP runs as a different user).
 
-8. **Print the QR codes** from **Admin → QR codes** *after* `APP_URL` points at the
-   live domain — the code encodes that URL.
+8. **Print the QR code** from **Admin → QR code** *after* `APP_URL` points at the
+   live domain — the code encodes that URL. The page warns you while it still points
+   at a non-HTTPS address.
 
 ### Post-deploy checklist
 
@@ -194,8 +195,13 @@ all come from the single `restaurant_settings` row, cached and exposed through
 **Caching.** The menu payload is cached for 12 hours and invalidated automatically
 whenever a category, item or the settings row is saved, or `menu:import` runs.
 
-**Scan tracking.** Hitting `/` with `?utm_source=qr` or `?table=N` writes a `qr_scans`
-row; plain visits are not counted. The dashboard shows today / 7-day / 30-day totals.
+**Scan tracking.** Hitting `/` with `?utm_source=qr` writes a `qr_scans` row; plain
+visits are not counted. The dashboard shows today / 7-day / 30-day totals.
+
+The admin offers a single restaurant-wide QR code. Per-table codes were removed from
+the UI, but `QrCodeBuilder::url($table)`, the `?table=N` parameter and the
+`qr_scans.table_number` column all still work — the feature can return without a
+migration.
 
 **Rate limiting.** Public routes are capped at 90 requests/minute per IP.
 

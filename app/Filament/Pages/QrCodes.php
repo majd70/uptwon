@@ -7,12 +7,15 @@ use Filament\Forms;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
-use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Support\Facades\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use ZipArchive;
 
+/**
+ * One QR code for the whole restaurant. Per-table codes were dropped; the
+ * builder and the qr_scans.table_number column still understand them, so the
+ * feature can come back without a migration.
+ */
 class QrCodes extends Page implements HasForms
 {
     use InteractsWithForms;
@@ -23,9 +26,9 @@ class QrCodes extends Page implements HasForms
 
     protected static ?int $navigationSort = 2;
 
-    protected static ?string $title = 'QR codes';
+    protected static ?string $title = 'QR code';
 
-    protected static ?string $navigationLabel = 'QR codes';
+    protected static ?string $navigationLabel = 'QR code';
 
     protected static string $view = 'filament.pages.qr-codes';
 
@@ -33,12 +36,7 @@ class QrCodes extends Page implements HasForms
 
     public function mount(): void
     {
-        $this->form->fill([
-            'table' => null,
-            'with_logo' => false,
-            'tables_from' => 1,
-            'tables_to' => 10,
-        ]);
+        $this->form->fill(['with_logo' => false]);
     }
 
     public function form(Form $form): Form
@@ -46,34 +44,16 @@ class QrCodes extends Page implements HasForms
         return $form
             ->statePath('data')
             ->schema([
-                Forms\Components\Section::make('Single code')
-                    ->description('Leave the table number empty for the general code you put on the door or the window.')
-                    ->columns(2)
+                Forms\Components\Section::make('Your QR code')
+                    ->description('Opens the menu. Print it for the door, the window, or a card on each table.')
                     ->schema([
-                        Forms\Components\TextInput::make('table')
-                            ->label('Table number')
-                            ->placeholder('e.g. 5 — or leave empty')
-                            ->maxLength(20)
-                            ->live(debounce: 400),
-
                         Forms\Components\Toggle::make('with_logo')
                             ->label('Put the logo in the centre')
-                            ->helperText(fn () => settings('logo') ? null : 'Upload a logo in Settings first.')
+                            ->helperText(fn () => settings('logo')
+                                ? 'The code still scans — it is generated at the highest error-correction level.'
+                                : 'Upload a logo under Settings → Branding first.')
                             ->disabled(fn () => ! settings('logo'))
                             ->live(),
-                    ]),
-
-                Forms\Components\Section::make('Table codes (bulk)')
-                    ->description('Generates one PNG per table, delivered as a ZIP.')
-                    ->columns(2)
-                    ->schema([
-                        Forms\Components\TextInput::make('tables_from')
-                            ->label('From table')
-                            ->numeric()->minValue(1)->maxValue(999)->required(),
-
-                        Forms\Components\TextInput::make('tables_to')
-                            ->label('To table')
-                            ->numeric()->minValue(1)->maxValue(999)->required(),
                     ]),
             ]);
     }
@@ -81,87 +61,40 @@ class QrCodes extends Page implements HasForms
     /** Data URI so the preview needs no extra request or temp file. */
     public function getPreviewProperty(): string
     {
-        $state = $this->form->getState();
-
-        $png = app(QrCodeBuilder::class)->png(
-            $state['table'] ?? null,
-            600,
-            (bool) ($state['with_logo'] ?? false),
-        );
+        $png = app(QrCodeBuilder::class)->png(null, 600, $this->withLogo());
 
         return 'data:image/png;base64,'.base64_encode($png);
     }
 
     public function getTargetUrlProperty(): string
     {
-        return QrCodeBuilder::url($this->form->getState()['table'] ?? null);
+        return QrCodeBuilder::url();
     }
 
     public function downloadPng(): StreamedResponse
     {
-        $state = $this->form->getState();
-        $table = $state['table'] ?? null;
+        $withLogo = $this->withLogo();
 
         return Response::streamDownload(
-            fn () => print (app(QrCodeBuilder::class)->png($table, 1024, (bool) ($state['with_logo'] ?? false))),
-            $this->fileName($table, 'png'),
+            fn () => print (app(QrCodeBuilder::class)->png(null, 1024, $withLogo)),
+            'uptown-qr.png',
             ['Content-Type' => 'image/png'],
         );
     }
 
     public function downloadSvg(): StreamedResponse
     {
-        $state = $this->form->getState();
-        $table = $state['table'] ?? null;
+        $withLogo = $this->withLogo();
 
         return Response::streamDownload(
-            fn () => print (app(QrCodeBuilder::class)->svg($table, 1024, (bool) ($state['with_logo'] ?? false))),
-            $this->fileName($table, 'svg'),
+            fn () => print (app(QrCodeBuilder::class)->svg(null, 1024, $withLogo)),
+            'uptown-qr.svg',
             ['Content-Type' => 'image/svg+xml'],
         );
     }
 
-    public function downloadTableZip(): ?StreamedResponse
+    private function withLogo(): bool
     {
-        $state = $this->form->getState();
-        $from = (int) $state['tables_from'];
-        $to = (int) $state['tables_to'];
-
-        if ($to < $from) {
-            Notification::make()->danger()->title('“To” must not be smaller than “From”.')->send();
-
-            return null;
-        }
-
-        if (($to - $from) > 199) {
-            Notification::make()->danger()->title('Please request 200 tables or fewer at a time.')->send();
-
-            return null;
-        }
-
-        $builder = app(QrCodeBuilder::class);
-        $withLogo = (bool) ($state['with_logo'] ?? false);
-
-        $tmp = tempnam(sys_get_temp_dir(), 'qr').'.zip';
-        $zip = new ZipArchive;
-        $zip->open($tmp, ZipArchive::CREATE | ZipArchive::OVERWRITE);
-
-        for ($n = $from; $n <= $to; $n++) {
-            $zip->addFromString("table-{$n}.png", $builder->png((string) $n, 1024, $withLogo));
-        }
-
-        $zip->close();
-
-        return Response::streamDownload(function () use ($tmp) {
-            readfile($tmp);
-            @unlink($tmp);
-        }, 'uptown-table-qr-codes.zip', ['Content-Type' => 'application/zip']);
-    }
-
-    private function fileName(?string $table, string $ext): string
-    {
-        return filled($table)
-            ? "uptown-qr-table-{$table}.{$ext}"
-            : "uptown-qr.{$ext}";
+        return (bool) ($this->form->getState()['with_logo'] ?? false);
     }
 }

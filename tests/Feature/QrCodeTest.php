@@ -51,7 +51,12 @@ class QrCodeTest extends TestCase
         $this->assertNotFalse(simplexml_load_string($svg), 'SVG payload is not valid XML.');
     }
 
-    public function test_table_codes_differ_from_the_general_code(): void
+    /**
+     * Per-table codes are no longer offered in the admin, but the builder and
+     * the qr_scans.table_number column still handle them, so a table parameter
+     * must keep producing a distinct, valid code.
+     */
+    public function test_the_builder_still_supports_a_table_parameter(): void
     {
         $builder = app(QrCodeBuilder::class);
 
