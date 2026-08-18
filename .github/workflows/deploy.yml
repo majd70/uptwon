@@ -18,13 +18,45 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Until the repository secrets are filled in, every push would otherwise
+      # fail with "missing server host", which says nothing useful. Check first
+      # and explain instead.
+      - name: Check deployment secrets
+        id: preflight
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          missing=""
+          for name in SSH_HOST SSH_USER SSH_KEY DEPLOY_PATH; do
+            [ -z "${!name}" ] && missing="$missing $name"
+          done
+
+          if [ -n "$missing" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "### Deployment is not configured yet"
+              echo
+              echo "Missing repository secrets:**$missing**"
+              echo
+              echo "Add them under **Settings → Secrets and variables → Actions**."
+              echo "The README section *Deploying to Hostinger* lists every value."
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "::warning::Skipping deploy — missing secrets:$missing"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Deploy over SSH
+        if: steps.preflight.outputs.configured == 'true'
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          port: ${{ secrets.SSH_PORT || 65002 }}
           script_stop: true
           script: |
             set -e
