@@ -77,7 +77,8 @@ php artisan serve --port=8000
 | `/menu` | full menu |
 | `/admin` | admin panel |
 
-Default login **admin@uptown.test** / **password** — change it immediately.
+Default login **admin@uptown.test** / **password** — change it immediately from
+**the avatar menu → Profile**.
 
 Only if you edit anything under `resources/`:
 
@@ -200,7 +201,7 @@ It also never runs `db:seed`, so the admin password and settings are never reset
 - [ ] `https://uptownrest.com` and `/menu` load, **with dish photos showing**
 - [ ] **Settings → Website** set to `https://uptownrest.com`
 - [ ] `APP_ENV=production`, `APP_DEBUG=false` in `.env`
-- [ ] Admin password changed from the seeded default
+- [ ] Admin password changed from the seeded default (avatar menu → Profile)
 - [ ] Real Instagram / Facebook / TikTok URLs set (the repo ships placeholders)
 - [ ] Phone, WhatsApp and Google Maps link filled in
 - [ ] QR code printed **after** the domain was set — check the URL under the preview
@@ -266,6 +267,13 @@ will encode.
 Note that a **printed** QR code cannot be updated: the address is baked into the
 image. Set the domain first, then print.
 
+**Accounts.** There is one admin account, created by `db:seed`. The avatar menu opens
+a **Profile** page for changing the name, email and password; the password change asks
+for the current one first, so an unattended session cannot be used to lock the owner
+out. Self-registration and password reset are deliberately off — this panel controls
+the live menu, and a reset flow would need working outbound mail. Add a second account
+with `php artisan tinker` if a colleague needs one.
+
 **Rate limiting.** Public routes are capped at 90 requests/minute per IP.
 
 **Uploads.** Validated (JPEG/PNG/WebP, ≤ 3 MB), resized to 1200px and converted to
@@ -309,13 +317,14 @@ the full description.
 php artisan test
 ```
 
-38 feature tests: landing and menu load, menu lists imported items, null prices render
+44 feature tests: landing and menu load, menu lists imported items, null prices render
 `—`, hidden and empty categories stay hidden, locale switching flips `lang`/`dir`, the
 locale cookie persists, name fallback between languages, monogram falls back from logo
 to letters to initials, QR scan logging, admin routes require auth and load once
 authenticated, QR PNG is a decodable image and SVG is valid XML, and `menu:import` is
 idempotent across repeated runs, and the dashboard's Website address overrides
-`APP_URL` while falling back to it when empty.
+`APP_URL` while falling back to it when empty. Six more cover the profile page:
+the password only changes when the current one is given and correct.
 
 Tests run against in-memory SQLite and never touch the real database.
 

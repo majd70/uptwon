@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Auth\EditProfile;
 use App\Http\Middleware\SetLocale;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -28,6 +29,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            // Lets the signed-in user change their own name, email and password.
+            // Registration and password reset stay off: this panel controls the
+            // live menu, and a reset flow would need working outbound mail.
+            ->profile(EditProfile::class, isSimple: false)
             ->brandName('Uptown Admin')
             ->colors([
                 // Uptown dark green, expanded into the shade ramp Filament needs
