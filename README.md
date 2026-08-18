@@ -87,78 +87,127 @@ npm install && npm run build   # then commit public/build
 
 ---
 
-## Deploying to shared hosting (cPanel / Hostinger)
+## Deploying to Hostinger
 
-Laravel's document root must be `public/`, and the rest of the app must sit **outside**
-the web root.
+The app is deployed once by hand, then every push to `main` updates it automatically
+(`.github/workflows/deploy.yml`).
 
-1. **Upload** the project to `~/uptown` (a sibling of `public_html`), and the contents
-   of `uptown/public/` into `public_html/`.
+### 1. Point the domain at Hostinger
 
-2. **Repoint the bootstrap** in `public_html/index.php`:
+In hPanel → **Domains**, either add `uptownrest.com` and set the registrar's
+nameservers to Hostinger's, or complete a domain transfer. Nameservers propagate in
+hours; a transfer takes 5–7 days — you do not need to wait for the transfer to launch
+the site.
 
-   ```php
-   require __DIR__.'/../uptown/vendor/autoload.php';
-   $app = require_once __DIR__.'/../uptown/bootstrap/app.php';
-   ```
+Then enable **SSL** (hPanel → Security → SSL) so the site is served over HTTPS.
 
-3. **Environment** — copy `.env.example` to `~/uptown/.env` and set:
+### 2. Set PHP to 8.2+
 
-   ```
-   APP_ENV=production
-   APP_DEBUG=false
-   APP_URL=https://yourdomain.com
-   ```
+hPanel → **Advanced → PHP Configuration**. Enable `gd`, `zip`, `fileinfo`, `mbstring`,
+`pdo_mysql`, `exif`.
 
-   `APP_URL` can also be left as-is and set from **Admin → Settings → Website**
-   instead — that value wins over `.env` and survives `config:cache`.
+### 3. Create the database
 
-   Generate a key with `php artisan key:generate --show` and paste it into `APP_KEY`.
-   Create the MySQL database in cPanel and fill in `DB_*`.
+hPanel → **Databases → MySQL**. Note the database name, user and password — Hostinger
+prefixes them (e.g. `u123456789_uptown`).
 
-4. **Install and migrate:**
+### 4. First deploy, over SSH
 
-   ```bash
-   composer install --no-dev --optimize-autoloader
-   php artisan migrate --force
-   php artisan db:seed --force
-   php artisan storage:link
-   php artisan menu:import
-   ```
+hPanel → **Advanced → SSH Access**. Note the host, port (usually **65002**) and
+username, then:
 
-   If SSH is unavailable, upload `vendor/` from your machine and run the commands from
-   cPanel's Terminal.
+```bash
+ssh -p 65002 uXXXXXXXX@your-server-ip
 
-5. **Storage link** — `storage:link` needs symlink support. If the host blocks it,
-   copy `storage/app/public/` into `public_html/storage/` instead. The menu photos
-   live there, so this step is what makes the images appear.
+cd ~/domains/uptownrest.com
+git clone https://github.com/majd70/uptwon.git app
+cd app
 
-6. **Cache for production:**
+composer install --no-dev --optimize-autoloader
+cp .env.example .env
+php artisan key:generate
+nano .env          # set DB_DATABASE / DB_USERNAME / DB_PASSWORD, APP_ENV=production, APP_DEBUG=false
 
-   ```bash
-   php artisan config:cache && php artisan route:cache && php artisan view:cache
-   ```
+php artisan migrate --force
+php artisan db:seed --force      # settings row + admin user — first time only
+php artisan menu:import          # the 85 items and their photos — first time only
+php artisan storage:link
+php artisan config:cache && php artisan route:cache && php artisan view:cache
+```
 
-   Re-run these after any `.env` change.
+### 5. Make `public/` the web root
 
-7. **Permissions** — `storage/` and `bootstrap/cache/` must be writable (755, or 775
-   if PHP runs as a different user).
+Laravel must serve from `public/`, never from the project root:
 
-8. **Print the QR code** from **Admin → QR code** *after* the domain is set — the
-   code encodes that address. The page shows the exact URL under the preview; check
-   it before printing.
+```bash
+cd ~/domains/uptownrest.com
+rm -rf public_html
+ln -s app/public public_html
+```
+
+The symlink means a deploy updates the served files too, with nothing to copy.
+
+> If the host refuses a symlinked document root, keep `public_html` as a real folder,
+> copy `app/public/*` into it, edit `public_html/index.php` so both `require` paths
+> point at `../app/`, and add `cp -r public/. ../public_html/` to the deploy script —
+> otherwise CSS and images will not update on deploy.
+
+### 6. Set the live domain in the dashboard
+
+Open `https://uptownrest.com/admin` → **Settings → Website** and enter
+`https://uptownrest.com`. That drives the QR code and every image URL, and it survives
+`config:cache`.
+
+### 7. Turn on automatic deployment
+
+Generate a key **on the server**, authorise it, and give the private half to GitHub:
+
+```bash
+ssh-keygen -t ed25519 -C "github-deploy" -f ~/.ssh/github_deploy -N ""
+cat ~/.ssh/github_deploy.pub >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+cat ~/.ssh/github_deploy          # copy the whole private key, BEGIN/END lines included
+```
+
+In GitHub → **Settings → Secrets and variables → Actions → New repository secret**:
+
+| Secret | Value |
+|---|---|
+| `SSH_HOST` | your server IP from hPanel |
+| `SSH_USER` | `uXXXXXXXX` |
+| `SSH_PORT` | `65002` |
+| `SSH_KEY` | the **private** key printed above |
+| `DEPLOY_PATH` | `/home/uXXXXXXXX/domains/uptownrest.com/app` |
+| `PHP_BIN` | optional — e.g. `/usr/bin/php8.2` if plain `php` is an older build |
+
+Push to `main`, then watch **Actions** in GitHub. You can also trigger it by hand from
+that tab (*Run workflow*).
+
+### What the deploy does — and deliberately does not
+
+Each run pulls `main`, installs production dependencies, runs migrations, and rebuilds
+the config, route and view caches.
+
+It **never runs `menu:import`**. That command rewrites names, descriptions and prices
+from `database/data/menu_data.json`, so running it on every deploy would silently undo
+every price change made in the admin. Run it by hand, over SSH, only when the source
+data itself changes.
+
+It also never runs `db:seed`, so the admin password and settings are never reset.
 
 ### Post-deploy checklist
 
-- [ ] `/` and `/menu` load, **with dish photos showing**
-- [ ] **Settings → Website** set to the live domain (or `APP_URL` matches it)
-- [ ] `APP_DEBUG=false`, `APP_ENV=production`
+- [ ] `https://uptownrest.com` and `/menu` load, **with dish photos showing**
+- [ ] **Settings → Website** set to `https://uptownrest.com`
+- [ ] `APP_ENV=production`, `APP_DEBUG=false` in `.env`
 - [ ] Admin password changed from the seeded default
 - [ ] Real Instagram / Facebook / TikTok URLs set (the repo ships placeholders)
-- [ ] Phone, WhatsApp and Google Maps link filled in under Settings
-- [ ] Compression is on — `curl -sH 'Accept-Encoding: gzip' -o /dev/null -w '%{size_download}\n' https://yourdomain.com/menu` should return ~12 KB, not ~200 KB
+- [ ] Phone, WhatsApp and Google Maps link filled in
+- [ ] QR code printed **after** the domain was set — check the URL under the preview
+- [ ] Compression on: `curl -sH 'Accept-Encoding: gzip' -o /dev/null -w '%{size_download}\n' https://uptownrest.com/menu` returns ~12 KB, not ~200 KB
 
 ---
+
 
 ## `menu:import`
 

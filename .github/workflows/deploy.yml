@@ -1,0 +1,54 @@
+name: Deploy to Hostinger
+
+# Every push to main updates the live site. Nothing here touches the database
+# contents: menu:import is deliberately NOT run, because it would overwrite
+# prices and names edited in the admin with the values from the JSON file.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Pull and migrate on the server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script_stop: true
+          script: |
+            set -e
+
+            # Hostinger's default `php` can be an older build; PHP_BIN lets you
+            # pin the right one, e.g. /usr/bin/php8.2
+            PHP="${{ secrets.PHP_BIN || 'php' }}"
+            cd "${{ secrets.DEPLOY_PATH }}"
+
+            echo "→ fetching origin/main"
+            git fetch --all --prune
+            git reset --hard origin/main
+
+            echo "→ installing dependencies"
+            composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+
+            echo "→ migrating"
+            $PHP artisan migrate --force
+
+            echo "→ refreshing caches"
+            $PHP artisan optimize:clear
+            $PHP artisan config:cache
+            $PHP artisan route:cache
+            $PHP artisan view:cache
+
+            echo "→ done"
+            $PHP artisan --version
