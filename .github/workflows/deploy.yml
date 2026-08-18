@@ -61,9 +61,11 @@ jobs:
           script: |
             set -e
 
-            # Hostinger's default `php` can be an older build; PHP_BIN lets you
-            # pin the right one, e.g. /usr/bin/php8.2
+            # Hostinger disables proc_open on the default PHP, which Composer
+            # needs. PHP_BIN points at a build that still has it — on this host
+            # /opt/alt/php82/usr/bin/php.
             PHP="${{ secrets.PHP_BIN || 'php' }}"
+            COMPOSER="${{ secrets.COMPOSER_PHAR || '/usr/local/bin/composer2.phar' }}"
             cd "${{ secrets.DEPLOY_PATH }}"
 
             echo "→ fetching origin/main"
@@ -71,7 +73,9 @@ jobs:
             git reset --hard origin/main
 
             echo "→ installing dependencies"
-            composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+            # Invoked through PHP_BIN rather than the `composer` wrapper, which
+            # would pick up the restricted default PHP.
+            $PHP "$COMPOSER" install --no-dev --optimize-autoloader --no-interaction --prefer-dist
 
             echo "→ migrating"
             $PHP artisan migrate --force
