@@ -16,6 +16,7 @@
         {{-- The backdrop lives at page level, not inside the content column, so it
              spans the whole viewport and never shows a vertical edge. It fades to
              solid ground at its foot, so there is no horizontal seam either. --}}
+        @unless ($coverImage)
         <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-[30rem] overflow-hidden">
             @if ($heroImage)
                 <img src="{{ $heroImage }}" alt="" fetchpriority="high"
@@ -27,6 +28,7 @@
                  bg-[radial-gradient(80%_65%_at_50%_26%,transparent,var(--ground)_100%)]"></div>
             <div class="u-pattern absolute inset-0"></div>
         </div>
+        @endunless
 
         {{-- Two hairlines run the full length of the page, so the hero belongs to a
              continuous card instead of reading as a panel on a background. --}}
@@ -40,8 +42,24 @@
 
         <main id="main">
 
+            {{-- ── Cover banner ─────────────────────────────────────────
+                 Shown at full strength: it is artwork the restaurant chose, and
+                 its cream ground would swallow cream type, so nothing sits on
+                 top of it. It fades into the page instead of stopping at an
+                 edge. --}}
+            @if ($coverImage)
+                <div class="relative">
+                    <img src="{{ $coverImage }}" alt="{{ $s->name }}" fetchpriority="high"
+                         class="w-full object-cover" style="aspect-ratio: 21/9;">
+                    {{-- A deep, soft fade rather than a cut, so the artwork
+                         dissolves into the page the way the rest of it does. --}}
+                    <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-3/5
+                         bg-[linear-gradient(to_top,var(--ground)_8%,color-mix(in_srgb,var(--ground)_55%,transparent)_55%,transparent)]"></div>
+                </div>
+            @endif
+
             {{-- ── Hero ─────────────────────────────────────────────────── --}}
-            <section class="relative px-6 pb-9 pt-28 text-center">
+            <section class="relative px-6 pb-9 text-center {{ $coverImage ? '-mt-12 pt-0' : 'pt-28' }}">
 
                 <div class="relative z-10">
                 {{-- Monogram in a gilded double ring --}}

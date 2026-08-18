@@ -241,6 +241,11 @@ remembered for a year. Arabic sets `dir="rtl"` and the layout mirrors.
 `$item->name` and `$item->description` return the current language and fall back to
 the other when empty. The admin panel is always English.
 
+**Cover image.** When one is uploaded it is shown as a full-strength banner across
+the top of the landing page, fading into the page beneath it — it is artwork the
+restaurant chose, so nothing is laid over it and nothing dims it. With no cover, a
+dish photograph stands in as a dimmed, blurred backdrop behind the name instead.
+
 **Branding.** Colours, logo, monogram, contact details, social links and working hours
 all come from the single `restaurant_settings` row, cached and exposed through
 `settings()`. The mark inside the gold ring is an uploaded **logo**, or the

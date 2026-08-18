@@ -11,7 +11,10 @@ class MenuController extends Controller
 {
     public function landing(): View
     {
+        // An uploaded cover is deliberate branding and gets shown as a real
+        // banner. Without one, a dish photograph stands in as dimmed ambience.
         return view('landing', [
+            'coverImage' => settings()->coverUrl(),
             'heroImage' => $this->heroImage(),
         ]);
     }
@@ -23,10 +26,6 @@ class MenuController extends Controller
      */
     private function heroImage(): ?string
     {
-        if ($cover = settings()->coverUrl()) {
-            return $cover;
-        }
-
         return Cache::remember('menu.hero', now()->addHours(12), function () {
             $dramatic = MenuItem::query()
                 ->available()
